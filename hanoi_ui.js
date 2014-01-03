@@ -5,20 +5,32 @@
 		this.game = new Hanoi.Game();
 	};
 
+	// TowersUI.prototype.renderSetup = function() {
+	// 	for(var i = 0; i < 3; i++) {
+	// 		$('body').append("<div class='tower' id='" + i + "'></div>");
+	// 	}
+	// }
+
 	TowersUI.prototype.render = function() {
+		$("div").remove();
+
 		for(var i = 0; i < 3; i++) {
 			$('body').append("<div class='tower' id='" + i + "'></div>");
 		}
+
 		var disc_ids = ["small", "medium", "large"];
 		var disc_heights = ["bottom", "middle", "top"];
 
 		this.game.towers.forEach(function(tower, t_index) {
 			tower.forEach(function(disc, d_index) {
 				var current_id = disc_ids[disc];
-				$('#' + t_index).prepend("<div class='disc' id='" + current_id + "'></div>");
+				var div = $('<div>')
+				div.addClass('disc').attr('id', current_id);
+				$('#' + t_index).prepend(div);
 				$('#' + current_id).addClass(disc_heights[d_index]);
 			})
 		})
+		this.bindClicks();
 	};
 
 	TowersUI.prototype.bindClicks = function() {
@@ -26,13 +38,17 @@
 	};
 
 	TowersUI.prototype.handleTowerClicks = function(event) {
+		console.log("gets here");
 		if(this.game.startTowerIdx === null) {
 			this.game.startTowerIdx = event.currentTarget.id;
+			console.log(this.game.startTowerIdx)
 		}
 		else {
+			console.log("fdslkafjdksfjas");
 			this.game.endTowerIdx = event.currentTarget.id;
+			this.game.move();
+			this.render();
 		}
-		this.game.move();
 		if (this.game.isWon()) {
 			alert("You won!");
 			this.gameOverClicks();
@@ -42,11 +58,11 @@
 	TowersUI.prototype.gameOverClicks = function() {
 		$('.tower').off("click");
 	}
-
-
-
 })(this);
 
 $(document).ready(function() {
-	new Hanoi.TowersUI().render();
+	var gameUI = new Hanoi.TowersUI();
+	// gameUI.renderSetup();
+	gameUI.render();
+	// gameUI.bindClicks();
 });
