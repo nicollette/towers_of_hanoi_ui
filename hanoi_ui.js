@@ -2,7 +2,7 @@
 	var Hanoi = root.Hanoi = (root.Hanoi || {});
 
 	var TowersUI = Hanoi.TowersUI = function() {
-		this.towers = [[2, 1, 0], [], []];
+		this.game = new Hanoi.Game();
 	};
 
 	TowersUI.prototype.render = function() {
@@ -12,7 +12,7 @@
 		var disc_ids = ["small", "medium", "large"];
 		var disc_heights = ["bottom", "middle", "top"];
 
-		this.towers.forEach(function(tower, t_index) {
+		this.game.towers.forEach(function(tower, t_index) {
 			tower.forEach(function(disc, d_index) {
 				var current_id = disc_ids[disc];
 				$('#' + t_index).prepend("<div class='disc' id='" + current_id + "'></div>");
@@ -21,9 +21,27 @@
 		})
 	};
 
-	TowersUI.prototype.bindTowerClicks = function() {
-
+	TowersUI.prototype.bindClicks = function() {
+		$(".tower").on("click", this.handleTowerClicks.bind(this));
 	};
+
+	TowersUI.prototype.handleTowerClicks = function(event) {
+		if(this.game.startTowerIdx === null) {
+			this.game.startTowerIdx = event.currentTarget.id;
+		}
+		else {
+			this.game.endTowerIdx = event.currentTarget.id;
+		}
+		this.game.move();
+		if (this.game.isWon()) {
+			alert("You won!");
+			this.gameOverClicks();
+		}
+	};
+
+	TowersUI.prototype.gameOverClicks = function() {
+		$('.tower').off("click");
+	}
 
 
 
