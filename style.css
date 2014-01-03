@@ -1,0 +1,45 @@
+.tower {
+	background-color:lightgray;
+	width:200px;
+	height:400px;
+	display: inline-block;
+	position: relative;
+}
+
+.disc {
+	height:100px;
+	position: absolute;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#small {
+	background-color:yellow;
+	width:50px;
+	left: 75;
+}
+
+
+#medium {
+	background-color:orange;
+	width:100px;
+	left: 50;
+}
+
+#large {
+	left: 25;
+	background-color:red;
+	width:150px;
+}
+
+.top {
+	bottom: 200;
+}
+
+.middle {
+	bottom: 100;
+}
+
+.bottom {
+	bottom: 0;
+}
