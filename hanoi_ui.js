@@ -5,12 +5,6 @@
 		this.game = new Hanoi.Game();
 	};
 
-	// TowersUI.prototype.renderSetup = function() {
-	// 	for(var i = 0; i < 3; i++) {
-	// 		$('body').append("<div class='tower' id='" + i + "'></div>");
-	// 	}
-	// }
-
 	TowersUI.prototype.render = function() {
 		$("div").remove();
 
@@ -62,7 +56,5 @@
 
 $(document).ready(function() {
 	var gameUI = new Hanoi.TowersUI();
-	// gameUI.renderSetup();
 	gameUI.render();
-	// gameUI.bindClicks();
 });
