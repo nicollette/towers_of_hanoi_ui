@@ -6,10 +6,10 @@
 	};
 
 	TowersUI.prototype.render = function() {
-		$("div").remove();
+		$("#game").empty();
 
 		for(var i = 0; i < 3; i++) {
-			$('body').append("<div class='tower' id='" + i + "'></div>");
+			$('#game').append("<div class='tower' id='" + i + "'></div>");
 		}
 
 		var disc_ids = ["small", "medium", "large"];
@@ -32,13 +32,11 @@
 	};
 
 	TowersUI.prototype.handleTowerClicks = function(event) {
-		console.log("gets here");
 		if(this.game.startTowerIdx === null) {
 			this.game.startTowerIdx = event.currentTarget.id;
 			console.log(this.game.startTowerIdx)
 		}
 		else {
-			console.log("fdslkafjdksfjas");
 			this.game.endTowerIdx = event.currentTarget.id;
 			this.game.move();
 			this.render();
