@@ -3,19 +3,22 @@ body {
   margin-right: auto;
   width:770px;
   background-image:url('tasky_pattern.png');
-  color:gray;
+  color:#89b5e0;
+  font-family:"Futura";
 }
 .tower {
 	width:250px;
 	height:400px;
 	display: inline-block;
 	position: relative;
-  border-left:1px dashed gray;
-  border-right:1px dashed gray;
+  border-left:1px dashed #89e0b5;
+  border-right:1px dashed #89e0b5;
 }
 
 .disc {
-	height:100px;
+  background-image: url('diagonal_striped_brick.png');
+  border:2px solid #e08989;
+  height:100px;
 	position: absolute;
 	margin-left:auto;
 	margin-right:auto;
@@ -33,38 +36,31 @@ body {
 }
 
 .selected {
-  border-style:solid;
-  border-color:blue;
-  border-width:1px;
+  border:2px solid #2c68c1;
 }
 
 #xs {
-  background-color:green;
   width:35px;
-  left:100px;
+  left:107px;
 }
 #small {
-	background-color:yellow;
 	width:50px;
-	left: 75;
+	left: 100px;
 }
 
 #medium {
-	background-color:orange;
 	width:100px;
-	left: 50;
+	left: 75px;;
 }
 
 #large {
-	left: 25;
-	background-color:red;
+	left: 50px;
 	width:150px;
 }
 
 #xl {
-  left:15px;
+  left:24px;
   width:200px;
-  background-color:white;
 }
 
 .layer1 {
