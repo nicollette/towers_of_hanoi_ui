@@ -34,8 +34,8 @@
 	TowersUI.prototype.handleTowerClicks = function(event) {
 		if(this.game.startTowerIdx === null) {
 			this.game.startTowerIdx = event.currentTarget.id;
-      debugger;
-		}
+      this.highlightDisc(event);
+    }
 		else {
 			this.game.endTowerIdx = event.currentTarget.id;
 			this.game.move();
@@ -46,7 +46,12 @@
 			this.gameOverClicks();
 		}
 	};
-
+  
+  TowersUI.prototype.highlightDisc = function (event) {
+    disc = $(event.currentTarget).find('div').first();
+    $(disc).toggleClass('selected');
+  };
+  
 	TowersUI.prototype.gameOverClicks = function() {
 		$('.tower').off("click");
 	}

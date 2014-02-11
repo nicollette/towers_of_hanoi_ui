@@ -21,6 +21,12 @@ body {
 	margin-right:auto;
 }
 
+.selected {
+  border-style:solid;
+  border-color:blue;
+  border-width:1px;
+}
+
 #small {
 	background-color:yellow;
 	width:50px;
