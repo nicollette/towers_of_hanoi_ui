@@ -12,8 +12,8 @@
 			$('#game').append("<div class='tower' id='" + i + "'></div>");
 		}
 
-		var disc_ids = ["small", "medium", "large"];
-		var disc_heights = ["bottom", "middle", "top"];
+		var disc_ids = ["xs", "small", "medium", "large", "xl"];
+		var disc_heights = ["layer5", "layer4", "layer3", "layer2", "layer1"];
 
 		this.game.towers.forEach(function(tower, t_index) {
 			tower.forEach(function(disc, d_index) {

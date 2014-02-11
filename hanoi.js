@@ -2,13 +2,13 @@
   var Hanoi = root.Hanoi = (root.Hanoi || {});
 
   var Game = Hanoi.Game = function () {
-    this.towers = [[2, 1, 0], [], []];
+    this.towers = [[4, 3, 2, 1, 0], [], []];
 		this.startTowerIdx = null;
 		this.endTowerIdx = null;
 	};
 
   Game.prototype.isWon = function () {
-    return (this.towers[2].length == 3) || (this.towers[1].length == 3);
+    return (this.towers[2].length == 5) || (this.towers[1].length == 5);
   };
 
   Game.prototype.isValidMove = function () {
