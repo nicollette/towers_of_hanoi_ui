@@ -30,15 +30,9 @@
     if (this.isValidMove()) {
       this.towers[this.endTowerIdx].push(this.towers[this.startTowerIdx].pop());
       this.resetTowerIndices();
-			console.log(this.towers[0]);
-			console.log(this.towers[1]);
-			console.log(this.towers[2]);
 			return true;
     } else {
       this.resetTowerIndices();
-			console.log(this.towers[0]);
-			console.log(this.towers[1]);
-			console.log(this.towers[2]);
       return false;
     }
   };

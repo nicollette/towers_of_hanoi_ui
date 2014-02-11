@@ -1,8 +1,7 @@
 body {
   margin-left: auto;
   margin-right: auto;
-  padding-top:15%;
-  padding-left:20%;
+  width:620px;
 }
 .tower {
 	background-color:lightgray;

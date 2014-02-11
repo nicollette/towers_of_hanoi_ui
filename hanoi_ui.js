@@ -34,7 +34,7 @@
 	TowersUI.prototype.handleTowerClicks = function(event) {
 		if(this.game.startTowerIdx === null) {
 			this.game.startTowerIdx = event.currentTarget.id;
-			console.log(this.game.startTowerIdx)
+      debugger;
 		}
 		else {
 			this.game.endTowerIdx = event.currentTarget.id;
